@@ -1,16 +1,17 @@
 package Projeto;
 
-public class Semaforo {
+public abstract class Semaforo {
 	private String descricao, local;
 
-	public Semaforo() {
-	}
+	public Semaforo() {}
 
 	public Semaforo(String descricao, String local) {
 		this.descricao = descricao;
 		this.local = local;
 	}
 
+	public abstract  String estahAberto();
+	
 	public String getDescricao() {
 		return descricao;
 	}

@@ -1,18 +1,26 @@
 package Projeto;
 
 public class SemaforoVeiculo extends Semaforo{
-	String status;
+	private String status;
+	
+	SemaforoVeiculo(){}
+	
+	public SemaforoVeiculo(String descricao, String local) {
+		super(descricao,local);
+	}
 	
 	GerarAleatorio aleat = new GerarAleatorio();
-	Camera camera = new Camera();
 	
-	boolean result = camera.ehPessoa();
 	
+	@Override
 	public String estahAberto() {
-		if(aleat.gerar() == 0) {
-			return "Verde";
-		} else {
-			return "Vermelho";
-		}
+		
+		if(aleat.gerar() == 1) 		
+			return status = "Aberto.";
+	
+		else 		
+			return status = "Fechado.";
+		
 	}
 }
+ 

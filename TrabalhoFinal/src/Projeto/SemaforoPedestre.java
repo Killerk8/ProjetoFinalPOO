@@ -1,14 +1,26 @@
 package Projeto;
 
-public class SemaforoPedestre extends Semaforo{
-	SemaforoVeiculo semVeic = new SemaforoVeiculo();
+public class SemaforoPedestre extends SemaforoVeiculo{
+	private String status;
 	
-	public String receberSinalDoSemVeic() {
-		if(semVeic.estahAberto().equals("Verde")) {
-			return "Vermelho";
-		} else {
-			return "Verde";
-		}
+	SemaforoVeiculo t = new SemaforoVeiculo();
+	
+	SemaforoPedestre(){
+		status ="";
 	}
 	
+	SemaforoPedestre(String descricao, String local){
+		super(descricao,local);
+		
+	}
+	
+	@Override
+	public String estahAberto() {
+		if (t.estahAberto().equals("Aberto.")) 		
+			return status = "Fechado.";
+		
+		else		
+			return status = "Aberto.";
+		
+	}
 }
